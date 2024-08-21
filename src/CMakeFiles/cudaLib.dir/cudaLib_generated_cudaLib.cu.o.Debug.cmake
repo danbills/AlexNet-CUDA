@@ -57,21 +57,21 @@ if(NOT generated_file)
 endif()
 
 # Set these up as variables to make reading the generated file easier
-set(CMAKE_COMMAND "/apps/spack/scholar/fall20/apps/cmake/3.20.6-gcc-4.8.5-ezq6lqr/bin/cmake") # path
-set(source_file "/home/chris241/695TA/solutions/60827_assignment4/src/cudaLib.cu") # path
-set(NVCC_generated_dependency_file "/home/chris241/695TA/solutions/60827_assignment4/src/CMakeFiles/cudaLib.dir//cudaLib_generated_cudaLib.cu.o.NVCC-depend") # path
-set(cmake_dependency_file "/home/chris241/695TA/solutions/60827_assignment4/src/CMakeFiles/cudaLib.dir//cudaLib_generated_cudaLib.cu.o.depend") # path
-set(CUDA_make2cmake "/apps/spack/scholar/fall20/apps/cmake/3.20.6-gcc-4.8.5-ezq6lqr/share/cmake-3.20/Modules/FindCUDA/make2cmake.cmake") # path
-set(CUDA_parse_cubin "/apps/spack/scholar/fall20/apps/cmake/3.20.6-gcc-4.8.5-ezq6lqr/share/cmake-3.20/Modules/FindCUDA/parse_cubin.cmake") # path
+set(CMAKE_COMMAND "/usr/bin/cmake") # path
+set(source_file "/home/dan/alexnet2/src/cudaLib.cu") # path
+set(NVCC_generated_dependency_file "/home/dan/alexnet2/src/CMakeFiles/cudaLib.dir//cudaLib_generated_cudaLib.cu.o.NVCC-depend") # path
+set(cmake_dependency_file "/home/dan/alexnet2/src/CMakeFiles/cudaLib.dir//cudaLib_generated_cudaLib.cu.o.depend") # path
+set(CUDA_make2cmake "/usr/share/cmake-3.28/Modules/FindCUDA/make2cmake.cmake") # path
+set(CUDA_parse_cubin "/usr/share/cmake-3.28/Modules/FindCUDA/parse_cubin.cmake") # path
 set(build_cubin OFF) # bool
 set(CUDA_HOST_COMPILER "") # path
 # We won't actually use these variables for now, but we need to set this, in
 # order to force this file to be run again if it changes.
-set(generated_file_path "/home/chris241/695TA/solutions/60827_assignment4/src/CMakeFiles/cudaLib.dir//.") # path
-set(generated_file_internal "/home/chris241/695TA/solutions/60827_assignment4/src/CMakeFiles/cudaLib.dir//./cudaLib_generated_cudaLib.cu.o") # path
-set(generated_cubin_file_internal "/home/chris241/695TA/solutions/60827_assignment4/src/CMakeFiles/cudaLib.dir//./cudaLib_generated_cudaLib.cu.o.cubin.txt") # path
+set(generated_file_path "/home/dan/alexnet2/src/CMakeFiles/cudaLib.dir//.") # path
+set(generated_file_internal "/home/dan/alexnet2/src/CMakeFiles/cudaLib.dir//./cudaLib_generated_cudaLib.cu.o") # path
+set(generated_cubin_file_internal "/home/dan/alexnet2/src/CMakeFiles/cudaLib.dir//./cudaLib_generated_cudaLib.cu.o.cubin.txt") # path
 
-set(CUDA_NVCC_EXECUTABLE "/usr/local/cuda-11.8/bin/nvcc") # path
+set(CUDA_NVCC_EXECUTABLE "/usr/bin/nvcc") # path
 set(CUDA_NVCC_FLAGS --std=c++14 ;; ) # list
 # Build specific configuration flags
 set(CUDA_NVCC_FLAGS_DEBUG  ; )
@@ -79,7 +79,7 @@ set(CUDA_NVCC_FLAGS_MINSIZEREL  ; )
 set(CUDA_NVCC_FLAGS_RELEASE  ; )
 set(CUDA_NVCC_FLAGS_RELWITHDEBINFO  ; )
 set(nvcc_flags -m64) # list
-set(CUDA_NVCC_INCLUDE_DIRS [==[/usr/local/cuda-11.8/include;/home/chris241/695TA/solutions/60827_assignment4;/home/chris241/695TA/solutions/60827_assignment4/include;/usr/local/cuda-11.8/include]==]) # list (needs to be in lua quotes to address backslashes)
+set(CUDA_NVCC_INCLUDE_DIRS [==[/usr/include;/home/dan/alexnet2;/home/dan/alexnet2/include;/usr/include]==]) # list (needs to be in lua quotes to address backslashes)
 string(REPLACE "\\" "/" CUDA_NVCC_INCLUDE_DIRS "${CUDA_NVCC_INCLUDE_DIRS}")
 set(CUDA_NVCC_COMPILE_DEFINITIONS [==[]==]) # list (needs to be in lua quotes see #16510 ).
 set(format_flag "-c") # string
@@ -188,7 +188,7 @@ cuda_execute_process(
 # For CUDA 2.3 and below, -G -M doesn't work, so remove the -G flag
 # for dependency generation and hope for the best.
 set(depends_CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS}")
-set(CUDA_VERSION 11.8)
+set(CUDA_VERSION 12.0)
 if(CUDA_VERSION VERSION_LESS "3.0")
   # Note that this will remove all occurrences of -G.
   list(REMOVE_ITEM depends_CUDA_NVCC_FLAGS "-G")

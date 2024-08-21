@@ -49,11 +49,8 @@ if( ("${CMAKE_VERSION}" VERSION_EQUAL 3.8) OR
         
         link_directories(${CMAKE_SOURCE_DIR}/src)
         
-        # add_executable(saxpy_cpu "${CMAKE_SOURCE_DIR}/src/saxpy_cpu.cpp")
-        # add_executable(saxpy_gpu "${CMAKE_SOURCE_DIR}/src/saxpy_gpu.cu")
-        add_executable(lab3 "${CMAKE_SOURCE_DIR}/lab3.cu" "${CMAKE_SOURCE_DIR}/lab3.cuh")
-        target_link_libraries(lab3 cudaLib)
-        target_link_libraries(lab3 cpuLib)
+        add_executable(run "${CMAKE_SOURCE_DIR}/run.cu" "${CMAKE_SOURCE_DIR}/run.cuh")
+        target_link_libraries(run cudaLib cpuLib)
 
         # add_executable(lab1_tester "${CMAKE_SOURCE_DIR}/lab1_tester.cu" "${CMAKE_SOURCE_DIR}/lab1_tester.cuh")
         # target_link_libraries(lab1_tester cpuLib)
